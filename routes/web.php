@@ -21,10 +21,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-// Ruta para página principal
-Route::get('/', function () {
-    return view('principal');
-});
+
 
 // Crear ruta para alumnos
 Route::get('/alumnos', [AlumnoController::class, 'index'])->name("alumnos");
@@ -46,10 +43,10 @@ Route::get('/register', [RegisterController::class, 'index'])->name("register");
 Route::post('/register', [RegisterController::class, 'store']);
 
 //Ruta para el login
-Route::get('/login',[LoginController::class,'index'])->name('login');
+Route::get('/',[LoginController::class,'index'])->name('login');
 
 //Ruta para enviar datos al servidor
-Route::post('/login',[LoginController::class,'store']);
+Route::post('/',[LoginController::class,'store']);
 
 //Ruta para el logout
 Route::post('/logout',[LogoutController::class,'store'])->name('logout');

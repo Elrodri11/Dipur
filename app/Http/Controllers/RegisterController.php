@@ -28,9 +28,9 @@ class RegisterController extends Controller
             // Pasamos las reglas de validacion de cada uno de los campos
             // Validamos "username" y "email" como unico relacionados con la tabla "users" generada automaticamente con la instalacion de laravel
             'name' => 'required|min:4|max:20',
-            'username' => 'required|unique:users|min:3|max:20',
             'email'=> 'required|unique:users|email|max:60',
-            'password' => 'required|confirmed|min:6'
+            'password' => 'required|confirmed|min:6',
+             'confirmPassword' => 'rrequired|confirmed|min:6',
         ]);
         // Insertar datos a la tabla de usuarios
         User::create([
